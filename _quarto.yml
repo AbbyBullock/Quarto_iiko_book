@@ -1,0 +1,28 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "Анализ ресторана"
+  author: "Костыря Владимир"
+  date: "14.10.2022"
+  page-navigation: true
+  page-footer: "Ногинск 2022, Костыря Владимир"
+  cover-image: rest.png
+  chapters:
+    - index.qmd
+    - intro.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: yeti
+    df-print: paged
+    code-fold: true
+    cover-image: rest.png
+  pdf:
+    documentclass: scrreport
+
+editor: visual
+
