@@ -23,7 +23,7 @@ library(vroom)
 library(gt)
 library(gghighlight)
 
-sales_iiko <- vroom("/Users/abby/Library/Mobile Documents/com~apple~CloudDocs/DDM/Git/iiko/sales_iiko.csv")
+sales_iiko <- vroom("/Users/abbybullock/Library/Mobile Documents/com~apple~CloudDocs/DDM/Git/iiko/sales_iiko.csv")
 VSH <- sales_iiko %>% 
   filter(str_detect(food_name, "ВСХ"))
 ```
@@ -487,7 +487,7 @@ VSH %>%
 
 ```{r}
 #| include: false
-drinks_pro <- vroom("/Users/abby/Library/Mobile Documents/com~apple~CloudDocs/DDM/Git/iiko/drinks_pro.csv")
+drinks_pro <- vroom("/Users/abbybullock/Library/Mobile Documents/com~apple~CloudDocs/DDM/Git/iiko/drinks_pro.csv")
 ```
 
 В данном разделе мы проанализируем продажи барного меню ресторана #proСчастье. У нас есть данные за период с `r min(drinks_pro$date)` по `r max(drinks_pro$date)`. Нам инетресен промежуток с июня 2022 по `r max(drinks_pro$date)`.
