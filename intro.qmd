@@ -685,9 +685,8 @@ drinks_pro %>%
 #| fig-align: center
 
 drinks_pro %>% 
-  group_by(group) %>% 
-  summarise(revenue = sum(revenue_end)) %>% 
-  ungroup() %>% 
+  summarise(revenue = sum(revenue_end),
+            .by = group) %>% 
   mutate(
     ratio = sum(revenue),
     ratio = round(revenue/ratio*100, 1),
@@ -748,7 +747,7 @@ drinks_pro %>%
   xlab("") +
   ylab("Доля %") +
   ggtitle("Доля продаж по группам барного меню",
-          subtitle = "период январь - октябрь 2022") +
+          subtitle = "период январь - декабрь 2022") +
   theme(axis.text.y = element_text(angle = 0, size = 5)) +
   theme(axis.text.x = element_text(angle = 90, size = 7)) +
   gghighlight(cs <= 95)
