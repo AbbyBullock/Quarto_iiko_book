@@ -5,7 +5,7 @@ project:
 book:
   title: "Анализ ресторана"
   author: "Костыря Владимир"
-  date: "14.10.2022"
+  date: "2022-10-14"
   sidebar:
     style: docked
     background: light
