@@ -6,6 +6,9 @@ book:
   title: "Анализ ресторана"
   author: "Костыря Владимир"
   date: "14.10.2022"
+  sidebar:
+    style: docked
+    background: light
   page-navigation: true
   page-footer: "Ногинск 2022, Костыря Владимир"
   cover-image: rest.png
@@ -17,7 +20,9 @@ bibliography: references.bib
 
 format:
   html:
-    theme: yeti
+    theme:
+      - cosmo
+      - styles.scss
     df-print: paged
     code-fold: true
     cover-image: rest.png
@@ -25,4 +30,3 @@ format:
     documentclass: scrreport
 
 editor: visual
-
