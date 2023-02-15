@@ -14,18 +14,7 @@ editor_options:
 
 ```{r}
 #| include: false
-library(tidyverse)
-library(lubridate)
-library(hms)
-library(dtplyr)
-library(patchwork)
-library(vroom)
-library(gt)
-library(gghighlight)
-
-sales_iiko <- vroom("/Users/abbybullock/Library/Mobile Documents/com~apple~CloudDocs/DDM/Git/iiko/sales_iiko.csv")
-VSH <- sales_iiko %>% 
-  filter(str_detect(food_name, "ВСХ"))
+source("script_1.R")
 ```
 
 Посмотрим на структуру данных
@@ -109,29 +98,7 @@ VSH %>%
 #| warning: false
 #| fig-width: 7
 #| fig-align: center
-VSH %>% 
-  mutate(date = round_date(date, "month")) %>% 
-  group_by(date, group_2) %>% 
-  summarise(
-    count = sum(count)
-  ) %>% 
-  ungroup() %>% 
-  ggplot(aes(date, count, col = group_2)) +
-  geom_line() +
-  geom_point(size = 1) +
-  theme_light() +
-  geom_text(aes(label = count),
-            position = position_dodge(width = 0), vjust = -1,
-            size = 1.7,
-            alpha = 1,
-            col = "black") +
-  theme(legend.position = "bottom",
-        legend.title = element_blank()) +
-  xlab("Месяц") +
-  ylab("Кол-во проданных SKU") +
-  ggtitle("Кол-во проданных SKU",
-          subtitle = "Бар и еда") +
-  theme(axis.text.x = element_text(angle = 0, size = 5))
+source("script_2.R")
 ```
 
 ```{r}

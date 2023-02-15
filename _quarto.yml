@@ -13,8 +13,10 @@ book:
   page-footer: "Ногинск 2022, Костыря Владимир"
   cover-image: rest.png
   chapters:
-    - index.qmd
-    - intro.qmd
+    - part: INTRODUCTION
+      chapters:
+      - index.qmd
+      - intro.qmd
 
 bibliography: references.bib
 
@@ -23,6 +25,7 @@ format:
     theme:
       - cosmo
       - styles.scss
+    fontsize: 0.9em
     df-print: paged
     code-fold: true
     cover-image: rest.png
